@@ -46,14 +46,14 @@ function login_footer( $input_id = '' ) {
 	}
 
 	?>
-	</div>
+	</div><?php // End of <div id="login">. ?>
 
 	<?php
 
 	if ( ! empty( $input_id ) ) {
 		?>
 		<script type="text/javascript">
-		try{document.getElementById('<?php echo $input_id; ?>').focus();}catch(e){}
+		try{document.getElementById('<?= $input_id; ?>').focus();}catch(e){}
 		if(typeof wpOnload==='function')wpOnload();
 		</script>
 		<?php

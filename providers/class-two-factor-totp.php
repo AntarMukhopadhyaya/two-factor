@@ -127,13 +127,13 @@ class Two_Factor_Totp extends Two_Factor_Provider {
 				<?php esc_html_e( 'Please scan the QR code or manually enter the key, then enter an authentication code from your app in order to complete setup.', 'two-factor' ); ?>
 			</p>
 			<p>
-				<img src="<?php echo esc_url( $this->get_google_qr_code( $totp_title, $key, $site_name ) ); ?>" id="two-factor-totp-qrcode" />
+				<img src="<?= esc_url( $this->get_google_qr_code( $totp_title, $key, $site_name ) ); ?>" id="two-factor-totp-qrcode" />
 			</p>
 			<p>
 				<code><?= esc_html( $key ); ?></code>
 			</p>
 			<p>
-				<input type="hidden" name="two-factor-totp-key" value="<?php echo esc_attr( $key ); ?>" />
+				<input type="hidden" name="two-factor-totp-key" value="<?= esc_attr( $key ); ?>" />
 				<label for="two-factor-totp-authcode">
 					<?php esc_html_e( 'Authentication Code:', 'two-factor' ); ?>
 					<input type="tel" name="two-factor-totp-authcode" id="two-factor-totp-authcode" class="input" value="" size="20" pattern="[0-9]*" />
@@ -145,7 +145,7 @@ class Two_Factor_Totp extends Two_Factor_Provider {
 				<?php esc_html_e( 'Secret key is configured and registered. It is not possible to view it again for security reasons.', 'two-factor' ); ?>
 			</p>
 			<p>
-				<a class="button" href="<?php echo esc_url( self::get_token_delete_url_for_user( $user->ID ) ); ?>"><?php esc_html_e( 'Reset Key', 'two-factor' ); ?></a>
+				<a class="button" href="<?= esc_url( self::get_token_delete_url_for_user( $user->ID ) ); ?>"><?php esc_html_e( 'Reset Key', 'two-factor' ); ?></a>
 				<em class="description">
 					<?php esc_html_e( 'You will have to re-scan the QR code on all devices as the previous codes will stop working.', 'two-factor' ); ?>
 				</em>
@@ -264,12 +264,12 @@ class Two_Factor_Totp extends Two_Factor_Provider {
 
 			foreach ( $notices as $class => $messages ) {
 				?>
-				<div class="<?php echo esc_attr( $class ); ?>">
+				<div class="<?= esc_attr( $class ); ?>">
 					<?php
 					foreach ( $messages as $msg ) {
 						?>
 						<p>
-							<span><?php echo esc_html( $msg ); ?><span>
+							<span><?= esc_html( $msg ); ?><span>
 						</p>
 						<?php
 					}
