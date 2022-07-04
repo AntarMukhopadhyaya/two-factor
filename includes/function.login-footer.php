@@ -46,7 +46,7 @@ function login_footer( $input_id = '' ) {
 	}
 
 	?>
-	</div><?php // End of <div id="login">. ?>
+	</div>
 
 	<?php
 

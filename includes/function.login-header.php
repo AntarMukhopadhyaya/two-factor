@@ -71,10 +71,11 @@ function login_header( $title = 'Log In', $message = '', $wp_error = null ) {
 	<html <?php language_attributes(); ?>>
 	<head>
 	<meta http-equiv="Content-Type" content="<?php bloginfo( 'html_type' ); ?>; charset=<?php bloginfo( 'charset' ); ?>" />
-	<title><?php echo $login_title; ?></title>
+	<title><?= $login_title; ?></title>
 	<?php
 
 	wp_enqueue_style( 'login' );
+
 
 	/*
 	 * Remove all stored post data on logging out.
@@ -173,7 +174,7 @@ function login_header( $title = 'Log In', $message = '', $wp_error = null ) {
 
 	?>
 	</head>
-	<body class="login no-js <?php echo esc_attr( implode( ' ', $classes ) ); ?>">
+	<body class="login no-js <?= esc_attr( implode( ' ', $classes ) ); ?>">
 	<script type="text/javascript">
 		document.body.className = document.body.className.replace('no-js','js');
 	</script>
@@ -187,7 +188,7 @@ function login_header( $title = 'Log In', $message = '', $wp_error = null ) {
 
 	?>
 	<div id="login">
-		<h1><a href="<?php echo esc_url( $login_header_url ); ?>"><?php echo $login_header_text; ?></a></h1>
+		<h1><a href="<?= esc_url( $login_header_url ); ?>"><?= $login_header_text; ?></a></h1>
 	<?php
 	/**
 	 * Filters the message to display above the login form.
@@ -253,7 +254,8 @@ function login_header( $title = 'Log In', $message = '', $wp_error = null ) {
  * @since 3.7.0
  */
 function wp_login_viewport_meta() {
-	?>
-	<meta name="viewport" content="width=device-width" />
-	<?php
+
+	echo '<meta name="viewport" content="width=device-width" />';
+
 }
+?>
